@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>POPCAT</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+
+    .popcat-img {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="text-center">
+      <img id="popcat" class="popcat-img img-fluid" src="DC8.png" alt="POPCAT">
+      <p id="clickCount">點擊數：0</p>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+ 
+    var popCount = 0;
+    var popcat = document.getElementById("popcat");
+    var clickCount = document.getElementById("clickCount");
+
+    popcat.addEventListener("click", function() {
+      popCount++;
+      if (popCount % 10 === 0) {
+        console.log("POPCAT!");
+      }
+
+      if (popCount % 2 === 0) {
+        popcat.src = "DC8.png";
+      } else {
+        popcat.src = "DC7.png";
+      }
+
+
+      clickCount.innerText = "點擊數：" + popCount;
+    });
+  </script>
+</body>
+</html>
